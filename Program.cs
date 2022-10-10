@@ -4,10 +4,10 @@ class Program
 {
     static void Main()
     {
-        var combinations = new List<Tuple<string, List<string>>>()
+        var combinations = new List<(string, List<string>)>()
         {
-            Tuple.Create("a", new List<string>() { "off", "onload" }),
-            Tuple.Create("js", new List<string>() { "off", "prefetch", "preload" })
+            ("a", new List<string>() { "off", "onload" }),
+            ("js", new List<string>() { "off", "prefetch", "preload" })
         };
         var prog = new Program();
         var result = prog.GeneratePermSequence(combinations);
@@ -18,7 +18,7 @@ class Program
         });
     }
 
-    public List<Dictionary<string, string>> GeneratePermSequence(List<Tuple<string, List<string>>> parameters)
+    public List<Dictionary<string, string>> GeneratePermSequence(List<(string, List<string>)> parameters)
     {
         if (!parameters.Any())
         {
